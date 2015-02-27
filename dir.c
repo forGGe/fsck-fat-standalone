@@ -25,16 +25,10 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
-#include <sys/cdefs.h>
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <bsd/string.h>
-#include <ctype.h>
 #include <unistd.h>
-#include <time.h>
-
 #include <sys/param.h>
 
 #include "ext.h"
@@ -359,6 +353,8 @@ removede(int f, struct bootblock *boot, struct fatEntry *fat, u_char *start,
 	case 2:
 		pwarn("Invalid long filename entry for volume label\n");
 		break;
+	default:
+		panic("Invalid type given");
 	}
 	if (ask(0, "Remove")) {
 		if (startcl != curcl) {

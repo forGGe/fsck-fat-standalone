@@ -29,22 +29,14 @@
  * SUCH DAMAGE.
  */
 
-#include <sys/cdefs.h>
-
 #include <sys/param.h>
 #include <sys/stat.h>
-#include <sys/mount.h>
 
 #include <err.h>
-#include <errno.h>
-#include <fstab.h>
-#include <paths.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <bsd/stdlib.h>
 #include <string.h>
-
-#include <sys/vfs.h>
 
 #include "fsutil.h"
 

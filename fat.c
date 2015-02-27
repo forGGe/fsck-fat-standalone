@@ -23,12 +23,8 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
-#include <sys/cdefs.h>
-
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdint.h>
@@ -583,6 +579,8 @@ writefat(int fs, struct bootblock *boot, struct fatEntry *fat, int correct_fat)
 			*p++ = 0xff;
 			*p++ = 0x0f;
 			break;
+		default:
+			panic("Cluster mask is wrong");
 		}
 	} else {
 		/* use same FAT signature as the old FAT has */
